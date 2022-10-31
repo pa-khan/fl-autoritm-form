@@ -1,0 +1,278 @@
+.field__area {
+  font-family: "Lato";
+  outline: none;
+  border: none;
+  transition: 0.3s;
+}
+.field__area::placeholder {
+  opacity: 1;
+  color: #2E2E2E;
+}
+.field.--b-gray .field__area {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #DFDFDF;
+  border-radius: 5px;
+}
+.field.--md .field__title {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.field.--md .field__area {
+  font-size: 20px;
+  height: 44px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.field.--error .field__area {
+  border-color: #f00;
+}
+
+.select {
+  z-index: 1;
+  position: relative;
+}
+.select select {
+  display: none;
+}
+.select__wrap {
+  position: relative;
+}
+.select__area {
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.select__value {
+  margin-right: auto;
+}
+.select__icon {
+  margin-left: auto;
+}
+.select__icon svg {
+  transition: 0.3s;
+}
+.select__drop {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  transition: 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+}
+.select__field .field__area {
+  padding-top: 2px;
+  padding-bottom: 0;
+  border: none;
+  border-radius: 0;
+  font-size: 14px !important;
+  border-bottom: 1px solid #DFDFDF;
+}
+.select__field .field__area::placeholder {
+  opacity: 0.4;
+  font-size: 14px !important;
+}
+.select__list {
+  overflow-y: auto;
+}
+.select__item {
+  transition: 0.3s;
+  cursor: pointer;
+}
+.select__item.--hide {
+  display: none;
+}
+.select.--b-gray .select__area {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #DFDFDF;
+  border-radius: 5px;
+}
+.select.--b-gray .select__drop {
+  background: #FFFFFF;
+  border: 1px solid #DFDFDF;
+  border-top: none;
+  border-radius: 5px;
+}
+.select.--b-gray .select__item:hover, .select.--b-gray .select__item.--current {
+  background: #DFDFDF;
+}
+.select.--b-gray.--open .select__area {
+  border-radius: 5px 5px 0 0;
+}
+.select.--b-gray.--open .select__drop {
+  border-radius: 0 0 5px 5px;
+}
+.select.--b-gray.--open .select__icon svg {
+  transform: rotate(180deg);
+}
+.select.--md .select__title {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.select.--md .select__area {
+  font-size: 20px;
+  height: 44px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.select.--md .select__list {
+  max-height: 192px;
+}
+.select.--md .select__item {
+  padding: 5px 15px;
+  font-size: 18px;
+}
+.select.--open {
+  z-index: 5;
+}
+.select.--open .select__drop {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+.select.--error .select__area {
+  border-color: #f00;
+}
+.select.--disabled {
+  pointer-events: none;
+}
+.select.--disabled .select__area {
+  opacity: 0.5;
+}
+
+.checkbox {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.checkbox input {
+  display: none;
+}
+.checkbox__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  min-width: 43px;
+  height: 43px;
+  background: #FFFFFF;
+  border: 1px solid #DFDFDF;
+  border-radius: 5px;
+}
+.checkbox__box svg {
+  transition: 0.3s;
+  opacity: 0;
+}
+.checkbox__wrap {
+  font-size: 20px;
+  line-height: 24px;
+  margin-left: 16px;
+}
+.checkbox.--checked .checkbox__box svg {
+  opacity: 1;
+}
+
+.calc {
+  background: #fff;
+  border: 1px solid #fdb839;
+  border-radius: 4px;
+  padding: 20px;
+  -webkit-box-shadow: rgba(1, 1, 1, 0.2) 0 0 20px;
+  box-shadow: rgba(1, 1, 1, 0.2) 0 0 20px;
+  font-family: "Lato";
+  margin-bottom: 60px;
+}
+.calc__title {
+  margin-bottom: 12px;
+}
+.calc__title h2 {
+  font-family: "Lato";
+  font-size: 26px;
+  font-weight: 900;
+  border-bottom: 1px solid #fdb839;
+}
+.calc__title span {
+  border-bottom: 2px solid #fdb839;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+.calc__desc {
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 30px;
+}
+.calc__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -16px -20px;
+}
+.calc__field, .calc__select {
+  width: calc(100% / 2 - 32px);
+  margin: 0 16px 20px;
+}
+.calc__group {
+  width: calc(100% - 32px);
+  margin: 0 16px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.calc__group .calc__field {
+  width: 200px;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+.calc__group .calc__checkbox {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.calc__btn {
+  min-width: 200px;
+  margin-left: 13px;
+  margin-right: 35px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 991px) {
+  .calc__group .calc__checkbox {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .calc {
+    padding: 15px;
+  }
+  .calc__wrap {
+    margin: 0;
+  }
+  .calc__field, .calc__select {
+    width: 100%;
+    margin: 0 0 18px;
+  }
+  .calc__group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+  .calc__group .calc__field {
+    width: 100%;
+    margin: 0 0 18px;
+  }
+  .calc__group .calc__btn {
+    order: 3;
+    width: 100%;
+    margin: 0;
+  }
+  .calc__group .calc__checkbox {
+    margin-left: 0;
+    width: 100%;
+    margin: 0 0 18px;
+  }
+}

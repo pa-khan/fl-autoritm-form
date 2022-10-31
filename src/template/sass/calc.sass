@@ -1,0 +1,249 @@
+.field
+    &__area
+        font-family: 'Lato'
+        outline: none
+        border: none
+        transition: .3s
+        &::placeholder
+            opacity: 1
+            color: #2E2E2E
+    &.--b-gray
+        .field
+            &__area
+                width: 100%
+                background: #FFFFFF
+                border: 1px solid #DFDFDF
+                border-radius: 5px
+    &.--md
+        .field
+            &__title
+                font-size: 20px
+                margin-bottom: 12px
+            &__area
+                font-size: 20px
+                height: 44px
+                padding-left: 15px
+                padding-right: 15px
+    &.--error
+        .field
+            &__area
+                border-color: #f00
+
+.select
+    z-index: 1
+    position: relative
+    select
+        display: none
+    &__wrap
+        position: relative
+    &__area
+        display: flex
+        align-items: center
+        transition: .3s
+        cursor: pointer
+    &__value
+        margin-right: auto
+    &__icon
+        margin-left: auto
+        svg
+            transition: .3s
+    &__drop
+        position: absolute
+        top: 100%
+        left: 0
+        right: 0
+        transition: .3s
+        opacity: 0
+        visibility: hidden
+        transform: translateY(10px)
+    &__field
+        .field
+            &__area
+                padding-top: 2px
+                padding-bottom: 0
+                border: none
+                border-radius: 0
+                font-size: 14px !important
+                border-bottom: 1px solid #DFDFDF
+                &::placeholder
+                    opacity: 0.4
+                    font-size: 14px !important
+    &__list
+        overflow-y: auto
+    &__item
+        transition: .3s
+        cursor: pointer
+        &.--hide
+            display: none
+    &.--b-gray
+        .select
+            &__area
+                width: 100%
+                background: #FFFFFF
+                border: 1px solid #DFDFDF
+                border-radius: 5px
+            &__drop
+                background: #FFFFFF
+                border: 1px solid #DFDFDF
+                border-top: none
+                border-radius: 5px
+            &__item
+                &:hover, &.--current
+                    background: #DFDFDF
+
+        &.--open
+            .select
+                &__area
+                    border-radius: 5px 5px 0 0
+                &__drop
+                    border-radius: 0 0 5px 5px
+                &__icon
+                    svg
+                        transform: rotate(180deg)
+    &.--md
+        .select
+            &__title
+                font-size: 20px
+                margin-bottom: 12px
+            &__area
+                font-size: 20px
+                height: 44px
+                padding-left: 15px
+                padding-right: 15px
+            &__list
+                max-height: 192px
+            &__item
+                padding: 5px 15px
+                font-size: 18px
+
+    &.--open
+        z-index: 5
+        .select
+            &__drop
+                opacity: 1
+                visibility: visible
+                transform: translateY(0px)
+    &.--error
+        .select
+            &__area
+                border-color: #f00
+    &.--disabled
+        pointer-events: none
+        .select
+            &__area
+                opacity: .5
+
+.checkbox
+    cursor: pointer
+    display: flex
+    align-items: center
+    input
+        display: none
+    &__box
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 43px
+        min-width: 43px
+        height: 43px
+        background: #FFFFFF
+        border: 1px solid #DFDFDF
+        border-radius: 5px
+        svg
+            transition: .3s
+            opacity: 0
+    &__wrap
+        font-size: 20px
+        line-height: 24px
+        margin-left: 16px
+
+    &.--checked
+        .checkbox
+            &__box
+                svg
+                    opacity: 1
+
+.calc
+    background: #fff
+    border: 1px solid #fdb839
+    border-radius: 4px
+    padding: 20px
+    -webkit-box-shadow: rgb(1 1 1 / 20%) 0 0 20px
+    box-shadow: rgb(1 1 1 / 20%) 0 0 20px
+    font-family: 'Lato'
+    margin-bottom: 60px
+    &__title
+        margin-bottom: 12px
+        h2
+            font-family: 'Lato'
+            font-size: 26px
+            font-weight: 900
+            border-bottom: 1px solid #fdb839
+        span
+            border-bottom: 2px solid #fdb839
+            display: inline-block
+            padding-bottom: 10px
+    &__desc
+        font-size: 20px
+        line-height: 24px
+        margin-bottom: 30px
+    &__wrap
+        display: flex
+        flex-wrap: wrap
+        margin: 0 -16px -20px
+    &__field, &__select
+        width: calc(100% / 2 - 32px)
+        margin: 0 16px 20px
+    &__group
+        width: calc(100% - 32px)
+        margin: 0 16px 20px
+        display: flex
+        flex-wrap: wrap
+        align-items: flex-end
+        .calc
+            &__field
+                width: 200px
+                margin-left: 0
+                margin-bottom: 0
+            &__checkbox
+                margin-top: 0
+                margin-bottom: 0
+                padding-left: 0
+    &__btn
+        min-width: 200px
+        margin-left: 13px
+        margin-right: 35px
+        font-size: 20px
+        line-height: 24px
+
+@media screen and (max-width: 991px)
+    .calc
+        &__group
+            .calc
+                &__checkbox
+                    margin-top: 20px
+@media screen and (max-width: 767px)
+    .calc
+        padding: 15px
+        &__wrap
+            margin: 0
+        &__field, &__select
+            width: 100%
+            margin: 0 0 18px
+        &__group
+            display: flex
+            flex-direction: column
+            width: 100%
+            margin: 0
+            .calc
+                &__field
+                    width: 100%
+                    margin: 0 0 18px
+                &__btn
+                    order: 3
+                    width: 100%
+                    margin: 0
+                &__checkbox
+                    margin-left: 0
+                    width: 100%
+                    margin: 0 0 18px

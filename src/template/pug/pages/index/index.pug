@@ -1,10 +1,92 @@
 extends ../../templates/default
 block vars
 	-
-		title = "Главная страница"
-		breadcrumbs = [
-			['Главная', 'index.html'],
-			[title]
-		]
+		title = "Рассчитайте стоимость работ и запчастей"
 block content
-	
+	.container
+		form.calc#calc
+			.calc__title #[h2 #[span Рассчитайте стоимость работ и запчастей]]
+			.calc__desc Ответьте на несколько вопросов и мы пришлем вам точный расчет за 3 минуты
+			.calc__wrap
+				.calc__field.field.--md.--b-gray#calc-service
+					.field__title Услуга
+					.field__wrap
+						input.field__area(type="text" name="service" placeholder="")
+
+				.calc__field.field.--md.--b-gray#calc-part
+					.field__title Запчасть
+					.field__wrap
+						input.field__area(type="text" name="part" placeholder="")
+				
+				.calc__select.select.--md.--b-gray.--required#calc-mark
+					.select__title Марка
+					.select__wrap
+						.select__area
+							.select__value
+							.select__icon
+								<svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M8.99999 9.75005C8.79219 9.75005 8.58419 9.67063 8.42555 9.51199L0.300552 1.38699C-0.0169321 1.0695 -0.0169321 0.555395 0.300552 0.238113C0.618037 -0.079168 1.13215 -0.0793711 1.44943 0.238113L8.99999 7.78868L16.5506 0.238113C16.868 -0.0793711 17.3821 -0.0793711 17.6994 0.238113C18.0167 0.555598 18.0169 1.06971 17.6994 1.38699L9.57443 9.51199C9.41579 9.67063 9.20779 9.75005 8.99999 9.75005Z" fill="#2E2E2E"/> </svg>
+						.select__drop
+							.select__field.field.--md
+								.field__wrap
+									input.field__area(type="text" name="part" placeholder="Поиск по марке авто")
+					select(name="year")
+					
+				.calc__select.select.--md.--b-gray.--required#calc-model
+					.select__title Модель
+					.select__wrap
+						.select__area
+							.select__value
+							.select__icon
+								<svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M8.99999 9.75005C8.79219 9.75005 8.58419 9.67063 8.42555 9.51199L0.300552 1.38699C-0.0169321 1.0695 -0.0169321 0.555395 0.300552 0.238113C0.618037 -0.079168 1.13215 -0.0793711 1.44943 0.238113L8.99999 7.78868L16.5506 0.238113C16.868 -0.0793711 17.3821 -0.0793711 17.6994 0.238113C18.0167 0.555598 18.0169 1.06971 17.6994 1.38699L9.57443 9.51199C9.41579 9.67063 9.20779 9.75005 8.99999 9.75005Z" fill="#2E2E2E"/> </svg>
+						.select__drop
+							.select__field.field.--md
+								.field__wrap
+									input.field__area(type="text" name="part" placeholder="Поиск по модели авто")
+					select(name="model")
+					
+				.calc__select.select.--md.--b-gray.--required#calc-engine
+					.select__title Объем двигателя
+					.select__wrap
+						.select__area
+							.select__value
+							.select__icon
+								<svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M8.99999 9.75005C8.79219 9.75005 8.58419 9.67063 8.42555 9.51199L0.300552 1.38699C-0.0169321 1.0695 -0.0169321 0.555395 0.300552 0.238113C0.618037 -0.079168 1.13215 -0.0793711 1.44943 0.238113L8.99999 7.78868L16.5506 0.238113C16.868 -0.0793711 17.3821 -0.0793711 17.6994 0.238113C18.0167 0.555598 18.0169 1.06971 17.6994 1.38699L9.57443 9.51199C9.41579 9.67063 9.20779 9.75005 8.99999 9.75005Z" fill="#2E2E2E"/> </svg>
+						.select__drop
+					select(name="engine")
+					
+				.calc__select.select.--md.--b-gray.--required#calc-year
+					.select__title Год выпуска
+					.select__wrap
+						.select__area
+							.select__value
+							.select__icon
+								<svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M8.99999 9.75005C8.79219 9.75005 8.58419 9.67063 8.42555 9.51199L0.300552 1.38699C-0.0169321 1.0695 -0.0169321 0.555395 0.300552 0.238113C0.618037 -0.079168 1.13215 -0.0793711 1.44943 0.238113L8.99999 7.78868L16.5506 0.238113C16.868 -0.0793711 17.3821 -0.0793711 17.6994 0.238113C18.0167 0.555598 18.0169 1.06971 17.6994 1.38699L9.57443 9.51199C9.41579 9.67063 9.20779 9.75005 8.99999 9.75005Z" fill="#2E2E2E"/> </svg>
+						.select__drop
+					select(name="mark")
+					
+				.calc__select.select.--md.--b-gray.--required#calc-type
+					.select__title Коробка передач (тип)
+					.select__wrap
+						.select__area
+							.select__value
+							.select__icon
+								<svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M8.99999 9.75005C8.79219 9.75005 8.58419 9.67063 8.42555 9.51199L0.300552 1.38699C-0.0169321 1.0695 -0.0169321 0.555395 0.300552 0.238113C0.618037 -0.079168 1.13215 -0.0793711 1.44943 0.238113L8.99999 7.78868L16.5506 0.238113C16.868 -0.0793711 17.3821 -0.0793711 17.6994 0.238113C18.0167 0.555598 18.0169 1.06971 17.6994 1.38699L9.57443 9.51199C9.41579 9.67063 9.20779 9.75005 8.99999 9.75005Z" fill="#2E2E2E"/> </svg>
+						.select__drop
+					select(name="type")
+
+				.calc__field.field.--md.--b-gray.--required#calc-vin
+					.field__title VIN
+					.field__wrap
+						input.field__area(type="text" name="" placeholder="")
+						
+				.calc__group
+					.calc__field.field.--md.--b-gray.--phone.--required#calc-phone
+						.field__title Номер телефона
+						.field__wrap
+							input.field__area(type="text" name="" placeholder="")
+					button.calc__btn.btn ОТПРАВИТЬ
+					.calc__checkbox.check.checkbox
+						input(type="checkbox" name="Подобрать запчасти" value="Да")
+						.checkbox__box
+							<svg width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M16.4831 0L6.80232 8.9809L2.70826 4.61185L0 7.14964L6.61417 14.2081L19 2.72826L16.4831 0Z" fill="#FDB839"/> </svg>
+						.checkbox__wrap Подобрать запчасти

@@ -8,16 +8,10 @@ html(lang="ru")
 		title=title
 	body
 		.wrap
+			link(rel="stylesheet" href="template/fonts/stylesheet.css" + version)
 			link(rel="stylesheet" href="template/css/style.css" + version)
-
-			+style('header', 'blocks')
-			include ../../blocks/header/header
-			+script('header', 'blocks')
+			link(rel="stylesheet" href="template/css/calc.css" + version)
 			
-			main.main
-				block content
-
-			+style('footer', 'blocks')
-			include ../../blocks/footer/footer
-
-			script(src="template/js/common.js" + version)
+			block content
+			<script src="https://unpkg.com/imask"></script>
+			script(src="template/js/calc.js")
